@@ -1,0 +1,14 @@
+target/
+*.jar
+*.class
+*.log
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.env
+.env.local
+node_modules/
+

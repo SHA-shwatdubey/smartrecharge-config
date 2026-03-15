@@ -1,0 +1,31 @@
+server:
+  port: 8060
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/SHA-shwatdubey/smartrecharge-config.git
+          default-label: main
+          searchPaths: /
+          timeout: 5
+          cloneOnStart: true
+          skipSslValidation: false
+          username: ${GIT_USERNAME:}
+          password: ${GIT_PASSWORD:}
+
+eureka:
+  client:
+    enabled: false
+    register-with-eureka: false
+    fetch-registry: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+

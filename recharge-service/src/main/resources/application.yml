@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: recharge-service
+  config:
+    import: optional:configserver:http://localhost:8060
+
+server:
+  port: 8064
+
+rabbitmq:
+  exchange: recharge.exchange
+  queue: recharge.queue
+  routing-key: recharge.routing.key
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    try-it-out-enabled: true
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+
+
+

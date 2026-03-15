@@ -1,0 +1,35 @@
+server:
+  port: 8065
+
+spring:
+  application:
+    name: processing-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/processing_db
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8061/eureka
+
+rabbitmq:
+  exchange: recharge.exchange
+  queue: recharge.queue
+  routing-key: recharge.routing.key
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    disable-swagger-default-url: true
+
+
